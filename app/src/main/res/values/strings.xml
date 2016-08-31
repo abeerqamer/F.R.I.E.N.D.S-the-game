@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">FRIENDS</string>
+    <string name="friends">F.R.I.E.N.D.S</string>
+    <string name="start_game">START GAME</string>
+    <string name="settings">SETTINGS</string>
+    <string name="exit">EXIT</string>
+    <string name="music_on">MUSIC: ON</string>
+    <string name="musicoff">MUSIC: UNMUTE</string>
+    <string name="musicon">MUSIC: MUTE</string>
+    <string name="the_game">the game</string>
+    <string name="time_up">TIME UP!</string>
+    <string name="points">points</string>
+    <string name="play_video">Play Video</string>
+    <string name="you_scored">you scored</string>
+    <string name="main_menu">MAIN MENU</string>
+    <string name="exiter">EXIT</string>
+    <string name="play_again">PLAY AGAIN</string>
+    <string name="main_menus">MAIN MENU</string>
+    <string name="sample_question">WHAT IS JOEY\'S FAVORITE FOOD?</string>
+    <string name="what_is_joey_s_favorite_food">WHAT IS JOEY\'S FAVORITE FOOD ?</string>
+    <string name="point">POINT</string>
+    <string name="chandlers">COULD YOU BE ANY BETTER ?</string>
+    <string name="oh_mommy">OH MOMMY OH DADDY \n I\'M A BIG OLD BADDY!</string>
+    <string name="how_you_doin">HOW YOU DOIN ?</string>
+    <string name="unagi">"YOU NEED SOME UNAGI"</string>
+    <string name="pivot">you just need to\nPIVOT! PIVOT! PIVOT!</string>
+    <string name="sandwhich">YOU ATE MY SANDWHICH ?</string>
+</resources>
