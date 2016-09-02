@@ -14,7 +14,7 @@
 
 
 
-package com.example.android.friends;
+package com.FRIENDS.android.friendsthegame;
 
 
 public class questions {

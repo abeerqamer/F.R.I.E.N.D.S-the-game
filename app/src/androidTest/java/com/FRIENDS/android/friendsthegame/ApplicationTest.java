@@ -1,4 +1,4 @@
-package com.example.android.friends;
+package com.FRIENDS.android.friendsthegame;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.example.android.friends;
+package com.FRIENDS.android.friendsthegame;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.example.android.friends.R;
+
+
 /**
  * FRIENDS trivia application enjoy!!!
  */
@@ -20,11 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     private VideoView videoView;
-    private Button play;
     private Button music;
     private MediaPlayer mediaPlayer;
-    private Button exit;
-    private Typeface typeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +34,15 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         TextView friends_textview = (TextView) findViewById(R.id.friends);
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
+        Typeface typeface1 = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Thin.ttf");
         if (friends_textview != null) {
-            friends_textview.setTypeface(typeface);
+            friends_textview.setTypeface(typeface1);
         }
 
         TextView thegame = (TextView) findViewById(R.id.the_game);
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Bold.ttf");
+        Typeface the_game_typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Bold.ttf");
         if (thegame != null) {
-            thegame.setTypeface(typeface);
+            thegame.setTypeface(the_game_typeface);
         }
 
 
@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         // play button will change its color when tapped!
-        play = (Button) findViewById(R.id.play_button);
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
-        play.setTypeface(typeface);
-        if (play != null) {
-            play.setBackgroundResource(R.drawable.play_button);
-        }
+        Button play = (Button) findViewById(R.id.play_button);
+        Typeface play_typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
+        play.setTypeface(play_typeface);
+
+        play.setBackgroundResource(R.drawable.play_button);
+
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity {
         // music button will change its color when tapped!
 
         music = (Button) findViewById(R.id.setting_button);
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
-        music.setTypeface(typeface);
+        Typeface music_typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
+        music.setTypeface(music_typeface);
         if (music != null) {
             music.setBackgroundResource(R.drawable.music_button);
         }
@@ -108,15 +108,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         // exit button will change its color when tapped!
-        exit = (Button) findViewById(R.id.exit_button);
-        typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
-        exit.setTypeface(typeface);
-        if (exit != null) {
-            exit.setBackgroundResource(R.drawable.exit_button);
+        Button exit = (Button) findViewById(R.id.exit_button);
+        Typeface exit_typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Light.ttf");
+        exit.setTypeface(exit_typeface);
+        exit.setBackgroundResource(R.drawable.exit_button);
 
-        }
 
-        // this'll destroy the onCreate activity and releasing the mediaplayer object
+
+        // this'll destroy the onCreate activity and releasing the media player object
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

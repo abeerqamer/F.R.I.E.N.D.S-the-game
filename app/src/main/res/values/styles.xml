@@ -14,27 +14,29 @@
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">#F50057</item>
         <item name="android:layout_marginTop">8dp</item>
-        <item name="android:textAllCaps">false</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">10dp</item>
+
     </style>
 
     <style name="Buttonlarge">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">34sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">#F50057</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:padding">20dp</item>
-        <item name="android:textAllCaps">false</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
     <style name="Buttonxlarge">
         <item name="android:gravity">center</item>
-        <item name="android:textSize">45sp</item>
+        <item name="android:textSize">40sp</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">#F50057</item>
         <item name="android:layout_marginTop">20dp</item>
         <item name="android:padding">30dp</item>
-        <item name="android:textAllCaps">false</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>

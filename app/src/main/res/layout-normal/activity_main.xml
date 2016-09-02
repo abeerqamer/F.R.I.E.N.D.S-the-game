@@ -20,7 +20,7 @@
     android:layout_height="match_parent"
     android:background="#616161"
     android:paddingTop="16dp"
-    tools:context="com.example.android.friends.MainActivity">
+    tools:context="com.FRIENDS.android.friendsthegame.MainActivity">
 
 
     <VideoView
@@ -60,6 +60,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/videoview"
         android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:splitMotionEvents="false">
 
@@ -70,7 +71,6 @@
             android:layout_weight="1"
             android:background="@color/start_game"
             android:text="@string/start_game"
-            android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="24sp" />
 
@@ -81,7 +81,6 @@
             android:layout_weight="1"
             android:background="@color/music_on"
             android:text="@string/musicon"
-            android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="24sp" />
 
@@ -92,7 +91,6 @@
             android:layout_weight="1"
             android:background="@color/exit"
             android:text="@string/exit"
-            android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="24sp" />
 

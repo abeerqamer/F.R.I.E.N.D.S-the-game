@@ -1,4 +1,4 @@
-package com.example.android.friends;
+package com.FRIENDS.android.friendsthegame;
 
 import org.junit.Test;
 

@@ -23,7 +23,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.friends.questionDisplay">
+    tools:context="com.FRIENDS.android.friendsthegame.questionDisplay">
 
 
     <TextView
@@ -44,7 +44,8 @@
         android:layout_marginTop="100dp"
         android:text="@string/sample_question"
         android:textColor="#fff"
-        android:textSize="45sp"
+        android:textSize="40sp"
+        android:textAllCaps="true"
 
         />
 
@@ -78,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/question_textview"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="120dp"
         android:orientation="vertical"
         android:splitMotionEvents="false">
 

@@ -20,7 +20,7 @@
     android:layout_height="match_parent"
     android:background="#424242"
     android:orientation="vertical"
-    tools:context=".ResultActivity">
+    tools:context="com.FRIENDS.android.friendsthegame.ResultActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -44,16 +44,16 @@
             android:layout_below="@id/point_text_view"
             android:layout_marginTop="8dp"
             android:gravity="center"
-            android:text="0"
+            android:text="@string/_0__"
             android:textColor="#FF9800"
-            android:textSize="80sp" />
+            android:textSize="60sp" />
 
         <TextView
             android:id="@+id/points"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/point_scored"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_marginTop="16dp"
             android:textAllCaps="true"
             android:textColor="#FF9800"
@@ -66,9 +66,12 @@
             android:id="@+id/end_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="not bad why not try again"
             android:layout_below="@+id/points"
-            android:textSize="24sp"
+            android:textSize="18sp"
+            android:text="HOW YOU DOING ?"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:textStyle="italic"
             android:textColor="#fff"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
@@ -79,7 +82,8 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
+
         >
 
         <Button
@@ -91,9 +95,10 @@
             android:layout_marginRight="16dp"
             android:padding="16dp"
             android:paddingLeft="16dp"
+            android:layout_centerHorizontal="true"
             android:paddingRight="16dp"
             android:text="@string/play_again"
-            android:textAlignment="center" />
+           />
 
 
 
@@ -109,10 +114,15 @@
             android:layout_below="@id/play_again_button"
             android:padding="16dp"
             android:paddingLeft="16dp"
+            android:layout_centerHorizontal="true"
             android:paddingRight="16dp"
             android:text="@string/main_menus"
-            android:textAlignment="center" />
+             />
+
+
     </RelativeLayout>
+
+
 
 
 

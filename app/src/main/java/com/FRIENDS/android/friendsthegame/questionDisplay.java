@@ -12,7 +12,8 @@
         See the License for the specific language governing permissions and
         limitations under the License.**/
 
-package com.example.android.friends;
+package com.FRIENDS.android.friendsthegame;
+
 
 import android.support.v7.app.AppCompatActivity;
 import android.animation.ValueAnimator;
@@ -28,21 +29,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import java.util.List;
+
 import android.os.Handler;
 
-
+import com.example.android.friends.R;
 
 
 public class questionDisplay extends AppCompatActivity {
 
     // bunch of instance variables
 
-    private static MediaPlayer player;
-    private static MediaPlayer answer_sound;
-    private MediaPlayer buzzer;
+    int score = 0;
+    int qid = 0;
+    private MediaPlayer player;
+    private MediaPlayer answer_sound;
     private List<questions> qaList;
-    private int timePassed = 0;
+    private long timePassed = 0;
     private questions currentQuestion;
     private Button option1;
     private Button option2;
@@ -52,14 +56,15 @@ public class questionDisplay extends AppCompatActivity {
     private TextView questionTimer;
     private TextView timer_up;
     private CustomTimer timer;
-    int score = 0;
-    int qid = 0;
 
     // this'll inflate the back/up button so user can go to the main activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -111,7 +116,7 @@ public class questionDisplay extends AppCompatActivity {
             public void onTick(long milliseconds) {
 
 
-                start_timer.setText("" + milliseconds / 1000);
+                start_timer.setText(String.valueOf(milliseconds / 1000));
             }
 
             @Override
@@ -131,6 +136,7 @@ public class questionDisplay extends AppCompatActivity {
             }
         }.start();
 
+
         questionTimer = (TextView) findViewById(R.id.timer_id);
         timer_up = (TextView) findViewById(R.id.time_up);
 
@@ -146,8 +152,10 @@ public class questionDisplay extends AppCompatActivity {
                 if (currentQuestion.getAnswer().equals(option1.getText())) {
                     score++;
                     option1.setBackgroundResource(R.drawable.right_answer);
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.correct);
-                    answer_sound.start();
+                    soundManager("correct");
+
+
+                    option1.setEnabled(false);
 
                     new Handler().postDelayed(new Runnable() {
 
@@ -156,6 +164,7 @@ public class questionDisplay extends AppCompatActivity {
 
 
                             option1.setBackgroundResource(R.color.option_button);
+                            option1.setEnabled(true);
 
 
                         }
@@ -167,14 +176,17 @@ public class questionDisplay extends AppCompatActivity {
 
                 } else {
                     option1.setBackgroundResource(R.drawable.wrong_answer);
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.wrong);
-                    answer_sound.start();
+                    soundManager("wrong");
+                    option1.setEnabled(false);
+
+
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
 
                             option1.setBackgroundResource(R.color.option_button);
+                            option1.setEnabled(true);
 
 
                         }
@@ -199,14 +211,16 @@ public class questionDisplay extends AppCompatActivity {
                 if (currentQuestion.getAnswer().equals(option2.getText())) {
                     score++;
                     option2.setBackgroundResource(R.drawable.right_answer);
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.correct);
-                    answer_sound.start();
+                    soundManager("correct");
+                    option2.setEnabled(false);
+
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
 
                             option2.setBackgroundResource(R.color.option_button);
+                            option2.setEnabled(true);
 
 
                         }
@@ -219,14 +233,17 @@ public class questionDisplay extends AppCompatActivity {
                 } else {
 
                     option2.setBackgroundResource(R.drawable.wrong_answer);
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.wrong);
-                    answer_sound.start();
+                    soundManager("wrong");
+                    option2.setEnabled(false);
+
+
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
 
                             option2.setBackgroundResource(R.color.option_button);
+                            option2.setEnabled(true);
 
 
                         }
@@ -249,15 +266,19 @@ public class questionDisplay extends AppCompatActivity {
 
                 if (currentQuestion.getAnswer().equals(option3.getText())) {
                     score++;
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.correct);
-                    answer_sound.start();
                     option3.setBackgroundResource(R.drawable.right_answer);
+                    soundManager("correct");
+                    option3.setEnabled(false);
+
+
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
 
                             option3.setBackgroundResource(R.color.option_button);
+                            option3.setEnabled(true);
+
 
                         }
                     }, 500);
@@ -268,14 +289,18 @@ public class questionDisplay extends AppCompatActivity {
 
                 } else {
                     option3.setBackgroundResource(R.drawable.wrong_answer);
-                    answer_sound = MediaPlayer.create(getApplicationContext(), R.raw.wrong);
-                    answer_sound.start();
+                    soundManager("wrong");
+                    option3.setEnabled(false);
+
+
                     new Handler().postDelayed(new Runnable() {
 
                         @Override
                         public void run() {
                             // return true on correct & false on incorrect
                             option3.setBackgroundResource(R.color.option_button);
+                            option3.setEnabled(true);
+
 
                         }
                     }, 500);
@@ -303,13 +328,14 @@ public class questionDisplay extends AppCompatActivity {
 
     }
 
+
     // checks whether the user chose the right answer if yes then continue to next question otherwise show result
     public void check_if_done() {
 
 
-       databaseHelper helper = new databaseHelper(this);
+        databaseHelper helper = new databaseHelper(this);
 
-        if (qid < helper.rowCount() ) {
+        if (qid < helper.rowCount()) {
 
             currentQuestion = qaList.get(qid);
             new CountDownTimer(500, 500) {
@@ -362,21 +388,46 @@ public class questionDisplay extends AppCompatActivity {
 
     private void setQAView() {
 
-        if(timePassed > 0)
-        {
+
+        if (timePassed > 0) {
             ques.setText(currentQuestion.getQuestion());
             option1.setText(currentQuestion.getOptionOne());
             option2.setText(currentQuestion.getOptionTwo());
             option3.setText(currentQuestion.getOptionThree());
             qid++;
-        }
-        else
-        {
-            send_to_result();
+
+        } else {
+            option1.setVisibility(View.GONE);
+            option2.setVisibility(View.GONE);
+            option3.setVisibility(View.GONE);
+            ques.setVisibility(View.GONE);
+
+
         }
 
     }
 
+    // manages the right and wrong sound
+    public void soundManager(String message) {
+
+        if (answer_sound != null) {
+            answer_sound.reset();
+            answer_sound.release();
+        }
+
+        if (message.equals("correct")) {
+            answer_sound = MediaPlayer.create(this, R.raw.correct);
+
+        } else if (message.equals("wrong")) {
+            answer_sound = MediaPlayer.create(this, R.raw.wrong);
+
+        }
+
+        if (answer_sound != null) {
+            answer_sound.start();
+
+        }
+    }
 
     public class CustomTimer extends CountDownTimer {
 
@@ -390,10 +441,10 @@ public class questionDisplay extends AppCompatActivity {
         @Override
         public void onTick(long milliseconds) {
             milliseconds = milliseconds / 1000;
-            timePassed++;
+            timePassed = milliseconds;
             Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Medium.ttf");
             start_timer.setTypeface(typeface);
-            questionTimer.setText("" + milliseconds);
+            questionTimer.setText(String.valueOf(milliseconds));
 
             if (milliseconds <= 5) {
                 questionTimer.setTextColor(Color.RED);
@@ -422,24 +473,14 @@ public class questionDisplay extends AppCompatActivity {
             });
 
 
-            buzzer = MediaPlayer.create(getApplicationContext(),R.raw.horn);
-            buzzer.start();
+            player = MediaPlayer.create(getApplicationContext(), R.raw.horn);
+            player.start();
 
 
             animator.start();
-
             send_to_result();
 
 
-        }
-
-
-
-
-        // returns the time passed in seconds
-        public long getTimePassed()
-        {
-            return timePassed;
         }
 
 

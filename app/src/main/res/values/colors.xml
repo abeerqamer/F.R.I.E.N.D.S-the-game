@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#212121</color>
-    <color name="colorPrimaryDark">#38393d</color>
+    <color name="colorPrimaryDark">#282a2e</color>
     <color name="colorAccent">#FF4081</color>
     <color name="onselectsetting">#FFED2F73</color>
     <color name="start_game">#8E24AA</color>
     <color name="music_on">#f50057</color>
     <color name="exit">#009688</color>
-    <color name="start_pressed">#c87cdc</color>
-    <color name="music_pressed">#ef739f</color>
+    <color name="start_pressed">#FFA025C1</color>
+    <color name="music_pressed">#FFFF1C6D</color>
     <color name="exit_pressed">#1fc1b2</color>
     <color name="right_answer">#f81aa91a</color>
     <color name="wrong_answer">#F8E90817</color>
     <color name="option_button">#9c27b0</color>
     <color name="pink_button">#FFF50057</color>
-    <color name="pink_pressed">#FFF41E6A</color>
+    <color name="pink_pressed">#FFFF397F</color>
 
 
 
