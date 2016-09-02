@@ -19,12 +19,14 @@ This sample uses the Gradle build system. To build this project, use the "gradle
 <h3>Support</h3>
 
 Google+ Community: https://plus.google.com/communities/105153134372062985968
-Stack Overflow: http://stackoverflow.com/questions/tagged/android
-If you've found an error in this sample, please file an issue: https://github.com/googlesamples/android-Quiz
+
+StackOverflow: http://stackoverflow.com/questions/tagged/android
+
+If you've found an error in this sample, please file an issue: https://github.com/abeerqamer/F.R.I.E.N.D.S-the-game
 
 Fork this project if you want make as many pull request you want no app is perfect my app may contain many bugs please help me by making pull request so that I can update my code.
 
-</h3>License</h3>
+<h3>License</h3>
 
 Copyright 2016 The Android Open Source Project, Inc.
 
